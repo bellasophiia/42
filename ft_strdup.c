@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 11:08:28 by  amangold         #+#    #+#             */
-/*   Updated: 2022/10/20 13:46:03 by  amangold        ###   ########.fr       */
+/*   Created: 2022/10/24 11:04:38 by  amangold         #+#    #+#             */
+/*   Updated: 2022/10/25 16:51:11 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <libft.h>
 
-int	strncmp(const char *s1, const char *s2, size_t n)
+char *ft_strdup(const char *s1)
 {
-	size_t	i;
+	int		s1_size;
+	char	*duplicate;
+	char	*dup_free;
 
-	i = 0;
+	s1_size = strlen(org);
+	duplicate = (char *) malloc (sizeof (char) *s1_size + 1);
+	if (duplicate == NULL)
+		return ((char *)NULL);
+	dup_free = duplicate;
+	while (*s1_size)
 	{
-		if (n == 0)
-			return (0);
+		*dup_free = *s1;
+		dup_free++;
+		s1++;
 	}
-	while (i < (int) n && (s1[i] != '\0' || s2[i] != '\0'))
-	{
-		if (*s1 != *s2)
-			return (s1[i] - s2[i]);
-	i++;
-	}
+	*dup_free = '\0';
+	return (duplicate);
 }

@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 16:42:33 by  amangold         #+#    #+#             */
-/*   Updated: 2022/10/18 17:47:31 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/10/25 12:36:14 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	ft_memmove(void *dest, const void *src, size_t len)
 	d = (char *) dest;
 	c = (char *) src;
 	i = 0;
-
 	while (i < len)
 	{
 		*d = *s;
@@ -32,4 +31,3 @@ void	ft_memmove(void *dest, const void *src, size_t len)
 	}
 	return (d);
 }
-
