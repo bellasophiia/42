@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 14:24:55 by  amangold         #+#    #+#             */
-/*   Updated: 2022/10/18 17:17:05 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/10/27 09:57:27 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 
 void	ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char		*d;
-	const char	*s;
-	int			i;
+	size_t	i;
 	
+	if (src == dest)
+		return (dest);
+	i = 0;
 	while (i < n)
 	{
 		*d = *s;
@@ -26,14 +27,14 @@ void	ft_memcpy(void *dst, const void *src, size_t n)
 		s++;
 		n--;
 	}
-	return (d);
+	return (dest);
 }
 
-int	main(
-	{
-		char	s[] "Hello";
-		char	d[10];
-		ft_memcpy(d, s, strlen(s)+1):
-		printf("Copied string is %s");
-	}
-)
+// int	main(
+// 	{
+// 		char	s[] "Hello";
+// 		char	d[10];
+// 		ft_memcpy(d, s, strlen(s)+1):
+// 		printf("Copied string is %s");
+// 	}
+// )
