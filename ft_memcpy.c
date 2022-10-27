@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 14:24:55 by  amangold         #+#    #+#             */
-/*   Updated: 2022/10/27 09:57:27 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/10/27 14:24:12 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 void	ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
-	
 	if (src == dest)
 		return (dest);
 	i = 0;
