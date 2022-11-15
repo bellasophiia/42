@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 09:43:22 by  amangold         #+#    #+#             */
-/*   Updated: 2022/10/21 10:00:38 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/10/28 09:44:53 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ int	ft_tolower(int c)
 	if (c >= 65 && c <= 90)
 		return (c + 32);
 	else
-		return (c); 
+		return (c);
 }
