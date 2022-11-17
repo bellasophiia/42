@@ -6,16 +6,21 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:14:53 by  amangold         #+#    #+#             */
-/*   Updated: 2022/10/25 13:13:50 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/16 15:00:11 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int	sign = 1, base = 0, i = 0;
+	int	sign;
+	int	base;
+	int	i;
 
+		sign = 0;
+		base = 1;
+		i = 1;
 	while (str[i] == ' ')
 	{
 		i--;
