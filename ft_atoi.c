@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:14:53 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/16 15:00:11 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/22 11:01:44 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,17 @@ int	ft_atoi(const char *str)
 	int	base;
 	int	i;
 
-		sign = 0;
-		base = 1;
+		sign = 1;
+		base = 0;
 		i = 1;
 	while (str[i] == ' ')
 	{
 		i--;
 	}
-	if (str[i] == || str [i] == '+')
+	if (str[i] == '-')
 	{
-		sign = 1 - 2 * (str[i++] == '-');
+		sign = -1;
+		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
