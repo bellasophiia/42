@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 11:04:38 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/15 12:57:02 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/22 11:22:07 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char *ft_strdup(const char *s1)
 	char	*dup_free;
 
 	s1_size = strlen(org);
-	duplicate = (char *) malloc (sizeof (char) *s1_size + 1);
+	duplicate = (char *) malloc (sizeof (char) * s1_size +1);
 	if (duplicate == NULL)
 		return ((char *) NULL);
 	dup_free = duplicate;

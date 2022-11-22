@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:14:53 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/22 11:01:44 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/22 15:38:25 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,25 @@
 
 int	ft_atoi(const char *str)
 {
-	int	sign;
-	int	base;
 	int	i;
+	int	nbr;
+	int	sign;
 
-		sign = 1;
-		base = 0;
-		i = 1;
-	while (str[i] == ' ')
-	{
-		i--;
-	}
-	if (str[i] == '-')
-	{
-		sign = -1;
+	i = 0;
+	nbr = 0;
+	sign = 1;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == '')
 		i++;
-	}
+	while (str[i] == '-' || str[i] == '+')
+		if (str[i++] == '-')
+		sign *= -1;
+			i++;
 	while (str[i] >= '0' && str[i] <= '9')
-	{
-		if (base > INT_MAX / 10 || (base == INT_MAX / 10 && str [i] - '0' > 7))
-		{
-			if (sign == 1)
-				return (INT_MAX);
-			else
-				return (INT_MIN);
-		}
-		base = 10 * base + (str[i++] - '0');
-	}
-	return (base * sign);
+		nbr = nbr * 10 + (str[i++] - '0');
+	if (sign % 2 == 1)
+		return (nbr * -1);
+	return (nbr);
 }
-
 //Driver Code
 // int main()
 // {
