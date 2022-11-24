@@ -6,23 +6,23 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 15:31:52 by  amangold         #+#    #+#             */
-/*   Updated: 2022/10/25 12:38:46 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/24 12:51:10 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-void	ft_memset(void *buffer, int c, size_t len)
+void	ft_memset(void *b, int c, size_t len)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*buf;
 
+	i = 0;
 	if (b == 0)
 		return (b);
-	i = 0;
 	buf = (unsigned char *)b;
-	while (i  < len)
+	while (i < len)
 	{
 		buf[i] = c;
 		i++;

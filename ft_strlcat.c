@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 09:12:13 by  amangold         #+#    #+#             */
-/*   Updated: 2022/10/25 14:05:33 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/24 09:53:53 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,24 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	const char		*ptr_src;
-	char			*ptr_dst;
+	const char		*ps;
+	char			*pd;
 	const char		dest_length;
 	char			src_length;
 
 	src_length = ft_strlen(src);
-	dest_length = ft_strlen(dest);
-	*ptr_src = dest_length;
-	*ptr_dst = 0;
-	if (dest_length < size - 1 && size > 0)
+	dest_length = ft_strlen(dst);
+	*ps = dest_length;
+	*pd = 0;
+	if (dest_length < dstsize - 1 && dstsize > 0)
 	{
-		while (src[*ptr_src] && dest_length + *ptr_src < size - 1)
+		while (src[*ps] && dest_length + *ps < dstsize - 1)
 		{
-			dst[*ptr_dst] = src[*ptr_src];
-			*ptr_dst++;
-			*ptr_src++;
+			dst[*pd] = src[*ps];
+			*pd++;
+			*ps++;
 		}
+		dst[*pd] = '\0';
+		return (ft_strlen(dst) + ft_strlen(&src[pd]));
 	}
 }

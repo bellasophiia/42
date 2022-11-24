@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:07:42 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/22 17:10:39 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/22 17:14:07 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,21 @@ int	ft_counter(char const *s, char c)
 	return (counter);
 }
 
-char	ft_isnegative()
+int	ft_isnegative(int n)
+{
+	int	i;
+
+	if (n < 0)
+	{
+		n = '-';
+		n++;
+	}
+}
+
 char	*ft_itoa(int n)
 {
 	int	i;
 
-	
-	if (n < 0)
-	{
-		n = '-';
-	}
-
-	
 	while ((n /= 10) > 0);
 {
 		n % 10 + '/0';

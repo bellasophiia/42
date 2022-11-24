@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:59:56 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/22 16:34:58 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/24 11:26:11 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,34 @@ int	ft_counter(char const *s, char c)
 char	*ft_strndup(const char *s, size_t n)
 {
 	char	*str;
+	int		i;
 
 	str = (char *) malloc (sizeof(char) * n +1);
 	if (str == NULL)
-		return (str);
-}	
+		return (NULL);
+	i = 0;
+	while (s)
+	{
+	str[n] = s;
+	n++;
+	s++;
+	}
+	str[n] = '\0';
+	return (str);
+}
 
 char	**ft_split(char const *s, char c)
 {
-	int	i;
+	int		i;
 	char	*str;
 
-	*str = (char *) malloc(sizeof(char) * () + 1 );
-	while ()
+	*str = (char *) malloc(sizeof(char) * n +1);
+	while (s[i])
+	{
+		while (s[i] == c)
+			i++;
+		while (s[i] && s[i] != c)
+			i++;
+	}
+	
 }
