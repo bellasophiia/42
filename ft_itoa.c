@@ -6,14 +6,14 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:07:42 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/29 17:33:49 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/29 17:45:18 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-int	ft_intlen(int n)
+static int	ft_intlen(int n)
 {
 	int	intlen;
 
@@ -28,7 +28,7 @@ int	ft_intlen(int n)
 	return (intlen);
 }
 
-int	ft_negative(int n)
+static int	ft_negative(int n)
 {
 	int	i;
 
