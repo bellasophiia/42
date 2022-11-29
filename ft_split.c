@@ -6,14 +6,14 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:59:56 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/29 17:16:51 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/29 17:51:28 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int	ft_counter(char const *s, char c)
+static int	ft_counter(char const *s, char c)
 {
 	unsigned int	i;
 	size_t			len;
@@ -52,7 +52,7 @@ int	ft_counter(char const *s, char c)
 //	str[n] = '\0';
 //	return (str);
 //}
-void	*free_all(char **all, int start, int stop)
+static void	*free_all(char **all, int start, int stop)
 {
 	while (start <= stop)
 		free(all[start++]);
