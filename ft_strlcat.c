@@ -6,12 +6,12 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 09:12:13 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/24 09:53:53 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/29 17:35:05 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <libft.h>
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

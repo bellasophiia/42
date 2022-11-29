@@ -6,9 +6,11 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:07:39 by  amangold         #+#    #+#             */
-/*   Updated: 2022/10/18 14:00:45 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/29 17:33:40 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(char *str)
 {

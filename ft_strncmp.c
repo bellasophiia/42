@@ -6,12 +6,12 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 11:08:28 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/22 10:31:36 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/29 17:35:31 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <libft.h>
+#include "libft.h"
 
 int	strncmp(const char *s1, const char *s2, size_t n)
 {

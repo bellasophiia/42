@@ -6,16 +6,16 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 12:41:35 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/22 11:25:31 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/29 17:35:24 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	u;
-	char	*str;
+	char			*str;
 
 	if (s == NULL || f == NULL)
 		return (NULL);

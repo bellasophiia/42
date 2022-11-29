@@ -6,11 +6,12 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 18:20:35 by  amangold         #+#    #+#             */
-/*   Updated: 2022/10/18 13:58:38 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/29 17:33:21 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ctpe.h>
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {

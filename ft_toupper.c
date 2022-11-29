@@ -6,12 +6,12 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 10:00:46 by  amangold         #+#    #+#             */
-/*   Updated: 2022/10/21 10:08:30 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/29 17:36:04 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ctype.h>
-#include <libft.h>
+#include "libft.h"
 
 int	ft_toupper(int c)
 {

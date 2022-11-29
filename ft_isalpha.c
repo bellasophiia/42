@@ -6,11 +6,12 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:06:45 by  amangold         #+#    #+#             */
-/*   Updated: 2022/10/18 13:29:50 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/29 17:33:26 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* #include<stdio.h> */
+#include "libft.h"
 
 int	ft_isalpha(char *str)
 {

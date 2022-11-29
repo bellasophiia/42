@@ -6,12 +6,12 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 10:12:31 by  amangold         #+#    #+#             */
-/*   Updated: 2022/10/27 10:29:55 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/29 17:34:24 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <libft.h>
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

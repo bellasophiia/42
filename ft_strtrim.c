@@ -6,12 +6,12 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 16:19:20 by  amangold         #+#    #+#             */
-/*   Updated: 2022/10/27 13:29:13 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/29 17:35:46 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <libft.>
+#include "libft.h"
 
 char	*ft_strtim(char const *s1, char const *set)
 {

@@ -6,12 +6,12 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 10:36:22 by  amangold         #+#    #+#             */
-/*   Updated: 2022/10/25 12:39:33 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/28 17:33:27 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <libft.h> 
+#include "libft.h" 
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t destsize)
 {

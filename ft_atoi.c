@@ -6,11 +6,12 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:14:53 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/22 15:38:25 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/29 17:33:05 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

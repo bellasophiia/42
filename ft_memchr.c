@@ -6,12 +6,12 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 19:12:39 by  amangold         #+#    #+#             */
-/*   Updated: 2022/10/18 16:16:02 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/29 17:33:54 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <libft.h>
+#include "libft.h"
 
 void	ft_memchr(const void *s, int c, size_t n)
 {

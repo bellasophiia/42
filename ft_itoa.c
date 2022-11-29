@@ -6,49 +6,26 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:07:42 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/25 12:33:17 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/29 17:33:49 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <libft.h>
+#include "libft.h"
 
-//int	ft_counter(char const *s, char c)
-//{
-//	unsigned int	i;
-//	char			counter;
-//
-//	i = 0;
-//	counter = 0;
-//	while (s[i])
-//	{
-//		while (s[i] == c)
-//		i++;
-//		if (s[i] != '\0')
-//		counter++;
-//		while (s[i] && s[i] != c)
-//		i++;
-//	}
-//	return (counter);
-//}
-
-void	ft_reversec(char s[])
+int	ft_intlen(int n)
 {
-	int	c;
-	int	i;
-	int	j;
+	int	intlen;
 
-	i = 0;
-	j = ft_strlen(s)-1;
-	c = s[i];
-
-	while (i < j)
+	intlen = 0;
+	if (n <= 0)
+		intlen++;
+	while (n)
 	{
-		i++;
-		j--;
+		n = n / 10;
+			intlen++;
 	}
-	s[i] = s[j];
-	s[j] = c;
+	return (intlen);
 }
 
 int	ft_negative(int n)
@@ -65,20 +42,22 @@ int	ft_negative(int n)
 char	*ft_itoa(int n)
 {
 	char	*str;
+	size_t	len;
+	int		i;
 	
-
+	i = n;
+	len = 0;
 	if(!(str = (char *) malloc(sizeof(char) ft_strlen(n) +1);
 		return (NULL);
-	if (n == -2147483648)
-		return (ft_strlcpy(str, "-2147483648"));
-	if (n < 0)
+	if (i < 0)
 	{
 		ft_negative(n)
 	}
-	while ((n /= 10) > 0)
+	str[len--] = '\0';
+	while (( i /= 10) > 0)
 	{
-		n % 10 + '/0';
-		n++;
+		i % 10 + '0';
+		i--;
 	}
-	ft_reversec(str[])
+	return (str);
 }

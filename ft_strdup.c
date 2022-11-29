@@ -6,13 +6,13 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 11:04:38 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/24 10:16:24 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/29 17:32:57 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdlib.h>
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s1)
 {

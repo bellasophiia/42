@@ -6,12 +6,13 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 15:31:52 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/24 12:51:10 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/29 17:34:10 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
+#include "libft.h"
 
 void	ft_memset(void *b, int c, size_t len)
 {

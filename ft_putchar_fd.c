@@ -6,12 +6,11 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 09:38:19 by  amangold         #+#    #+#             */
-/*   Updated: 2022/10/27 10:11:49 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/29 17:34:15 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {
