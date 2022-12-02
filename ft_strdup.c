@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 11:04:38 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/29 17:32:57 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/12/01 13:26:10 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strdup(const char *s1)
 	i = 0;
 	while (*s1)
 	{
-		*duplicate[i] = *s1;
+		duplicate[i] = *s1;
 		i++;
 		s1++;
 	}

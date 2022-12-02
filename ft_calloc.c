@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 10:22:58 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/29 17:33:17 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/29 18:02:35 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,19 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	char	*memory;
-	int		i;
+	char			*memory;
+	unsigned long	i;
 
-	i = 0
-		if (count != 0)
-	{
-		if ((count * size) / count != size)
-	}
-		memory = malloc (count * size);
+	i = 0;
+	if (count && (count * size) / count != size)
+		return (NULL);
+	memory = malloc(count * size);
 	if (memory == NULL)
 		return (NULL);
 	while (i < size * count)
 	{
-		memory[i] = 0:
-			i++;
+		memory[i] = 0;
+		i++;
 	}
 	return (memory);
 }

@@ -6,18 +6,20 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 16:19:20 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/29 17:35:46 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/12/02 18:18:29 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "libft.h"
 
-char	*ft_strtim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	size_s;
+	int		
 	char	*n;
 
+	size_s = 0;
 	if (!s1 || !set)
 		return (NULL);
 	while (*s1 && ft_strchr(set, *s1))

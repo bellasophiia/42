@@ -6,11 +6,12 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:07:42 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/29 17:45:18 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/29 18:30:25 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 #include "libft.h"
 
 static int	ft_intlen(int n)
@@ -30,13 +31,12 @@ static int	ft_intlen(int n)
 
 static int	ft_negative(int n)
 {
-	int	i;
-
 	if (n < 0)
 	{
 		n = '-';
 		n++;
 	}
+	return (n);
 }
 
 char	*ft_itoa(int n)
@@ -44,20 +44,22 @@ char	*ft_itoa(int n)
 	char	*str;
 	size_t	len;
 	int		i;
-	
+
 	i = n;
 	len = 0;
-	if(!(str = (char *) malloc(sizeof(char) ft_strlen(n) +1);
-		return (NULL);
+	str = 0;
+	str = (char *) malloc(sizeof(char) * ft_intlen(n) + 1);
+	return (NULL);
 	if (i < 0)
 	{
-		ft_negative(n)
+		ft_negative(n);
 	}
 	str[len--] = '\0';
-	while (( i /= 10) > 0)
+	while (i)
 	{
-		i % 10 + '0';
-		i--;
+		str[len] = i % 10 + '0';
+		i = i / 10;
+		len--;
 	}
 	return (str);
 }

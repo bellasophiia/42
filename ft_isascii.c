@@ -6,11 +6,10 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 18:45:02 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/29 17:33:33 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/29 18:03:07 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctpe.h>
 #include "libft.h"
 
 int	ft_isascii(int c)

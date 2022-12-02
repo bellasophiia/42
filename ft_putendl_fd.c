@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 11:25:51 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/29 17:34:20 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/11/29 19:00:06 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ void	ft_putendl_fd(char *s, int fd)
 	i = 0;
 	if (!s)
 		return ;
-	write (fd, &s, ft_strlen);
+	write (fd, &s, ft_strlen(s));
 	write (fd, "\n", 1);
 }

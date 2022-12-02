@@ -6,21 +6,27 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 18:05:23 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/29 17:34:48 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/12/01 13:25:01 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h> 
 #include "libft.h"
 
-char	ft_strchr(const char *hay, int needle)
+char	*ft_strchr(const char *hay, int needle)
 {
-	while (*hay != '\0')
+	char	*str;
+	int		first;
+
+	str = (char *) hay;
+	first = 0;
+	while (str[first] != '\0' && str[first] != (char) needle)
 	{
-		if (*hay == needle)
-			return ((char *) needle);
-			hay++;
+			first++;
 	}
+	if (str[first] == (char) needle)
+		return (str + first);
+	return (NULL);
 }
 
 // int	main()

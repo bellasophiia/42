@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:14:53 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/29 17:33:05 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/12/02 13:05:24 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	nbr = 0;
 	sign = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == '')
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
 		i++;
 	while (str[i] == '-' || str[i] == '+')
 		if (str[i++] == '-')
@@ -34,6 +34,7 @@ int	ft_atoi(const char *str)
 		return (nbr * -1);
 	return (nbr);
 }
+
 //Driver Code
 // int main()
 // {
