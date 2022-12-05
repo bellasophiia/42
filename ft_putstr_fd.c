@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 10:33:56 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/29 17:34:38 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/12/05 10:47:49 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	ft_putstr_fd(char *s, int fd)
 	i = 0;
 	if (!s)
 		return ;
-	while (s[i])
+	while (s[i] != '\0')
 	{
-		write(fd, &s, 1);
-		s++;
+		write(fd, &s[i], 1);
+		i++;
 	}
 }

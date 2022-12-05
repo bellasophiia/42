@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:26:27 by  amangold         #+#    #+#             */
-/*   Updated: 2022/12/01 13:27:25 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/12/05 14:29:24 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,25 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		s1_len;
-	int		s2_len;
+	size_t	i;
+	size_t	j;
 	char	*join;
 
-	if (s1 != s2)
+	join = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	if (join == NULL)
 		return (NULL);
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	join = malloc(sizeof(char) * (s1_len + s2_len) + 1);
-	ft_strlcpy(join, s1, s1_len);
-	ft_strlcpy((join + s1_len), s2, (s1_len + s2_len + 1));
+	i = 0;
+	j = 0;
+	while (s1[i] != '\0')
+	{
+		join[i] = s1[i];
+		i++;
+	}
+	while (s2[j] != '\0')
+	{
+		join[i + j] = s2[j];
+		j++;
+	}
+	join[i + j] = '\0';
 	return (join);
 }

@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 09:12:13 by  amangold         #+#    #+#             */
-/*   Updated: 2022/12/01 13:43:49 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/12/05 13:48:04 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,19 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int			ps;
-	int			pd;
-	size_t		dest_length;
-	size_t		src_length;
+	size_t	ps;
+	size_t	pd;
+	size_t	slen;
+	size_t	dstlen;
+	
 
-	src_length = ft_strlen(src);
-	dest_length = ft_strlen(dst);
-	ps = dest_length;
-	pd = 0;
-	if (dest_length < dstsize - 1 && dstsize > 0)
+	slen = ft_strlen(src);
+	dstlen = ft_strlen(dst);
+	pd = dstlen;
+	ps = 0;
+	if (dstlen < dstsize - 1 && dstsize > 0)
 	{
-		while (src[ps] && dest_length + ps < dstsize - 1)
+		while (src[ps] && dstlen + ps < dstsize - 1)
 		{
 			dst[pd] = src[ps];
 			pd++;
@@ -34,5 +35,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		}
 		dst[pd] = '\0';
 	}
-	return (dest_length + src_length);
+	if (dstsize < dstlen)
+		dstlen = dstsize;
+	return (dstlen + slen);
 }
