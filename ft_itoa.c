@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 18:07:42 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/29 18:30:25 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/12/09 11:25:50 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,48 +16,43 @@
 
 static int	ft_intlen(int n)
 {
-	int	intlen;
+	size_t	intlen;
 
 	intlen = 0;
-	if (n <= 0)
+	if (n == 0)
+		intlen++;
+	if (n < 0)
 		intlen++;
 	while (n)
 	{
 		n = n / 10;
-			intlen++;
+		intlen++;
 	}
 	return (intlen);
 }
 
-static int	ft_negative(int n)
-{
-	if (n < 0)
-	{
-		n = '-';
-		n++;
-	}
-	return (n);
-}
-
 char	*ft_itoa(int n)
 {
-	char	*str;
-	size_t	len;
-	int		i;
+	char			*str;
+	size_t			len;
+	unsigned int	i;
 
-	i = n;
-	len = 0;
-	str = 0;
-	str = (char *) malloc(sizeof(char) * ft_intlen(n) + 1);
-	return (NULL);
-	if (i < 0)
+	len = ft_intlen(n);
+	str = (char *) malloc(sizeof(char) * len + 1);
+	if (!str)
+		return (NULL);
+	if (n < 0)
 	{
-		ft_negative(n);
+		str[0] = '-';
+		n *= -1;
 	}
 	str[len--] = '\0';
-	while (i)
+	i = n;
+	if (i == 0)
+		str[0] = i + '0';
+	while (i != 0)
 	{
-		str[len] = i % 10 + '0';
+		str[len] = (i % 10) + '0';
 		i = i / 10;
 		len--;
 	}

@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 12:41:35 by  amangold         #+#    #+#             */
-/*   Updated: 2022/12/01 13:45:01 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/12/06 08:18:16 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	u = 0;
 	str = (char *) malloc(sizeof(char) * (ft_strlen(s)) + 1);
+	if (str == NULL)
+		return (NULL);
 	while (s[u] != '\0')
 	{
 		str[u] = f(u, s[u]);

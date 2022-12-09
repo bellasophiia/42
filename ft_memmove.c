@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 16:42:33 by  amangold         #+#    #+#             */
-/*   Updated: 2022/12/02 17:09:12 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/12/05 15:58:43 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,23 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	const char	*s;
 	size_t		i;
 
-	d = (char *) dest;
-	s = (char *) src;
+	d = dest;
+	s = src;
 	i = 0;
-	if (dest < src)
+	if (d < s)
 	{
 		while (i < len)
 		{
 		d[i] = s[i];
 		i++;
 		}
-		if (d > s)
+	}
+	else if (d > s)
+	{
+		while (len > 0)
 		{
 			len--;
-		d[len - 1] = s[len - 1];
+		d[len] = s[len];
 		}
 	}
 	return (dest);

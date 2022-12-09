@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 12:48:59 by  amangold         #+#    #+#             */
-/*   Updated: 2022/12/02 14:08:51 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/12/05 18:21:04 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,28 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int		i;
-	int		j;
-	char	*str;
+	size_t	haycount;
+	size_t	needlecount;
+	size_t	alen;
 
-	i = 0;
-	j = 0;
-	str = (char *) haystack;
-	if (!haystack && len == 0)
-		return (NULL);
-	if (0 == (ft_strlen (needle)))
-		return (str);
+	haycount = 0;
+	alen = 0;
+	while (needle[alen])
+			alen++;
+	if (!alen)
+		return ((char *)haystack);
+	if (!len)
+		return (0);
+	while (haystack[haycount] && alen + haycount <= len)
 	{
-		while (str[i] != '\0' && len >= ft_strlen(needle))
+		needlecount = 0;
+		while (haystack[haycount + needlecount] == needle[needlecount]
+			&& needlecount < alen)
 		{
-			while (str[i + j] == needle[j] && str[i + j] != '\0')
-			{
-				j++;
-			}
-			if (needle[j] == '\0')
-				return (str + i);
-			i++;
-			j = 0;
-			len--;	
+			if (++needlecount == alen)
+				return ((char *)&haystack[haycount]);
 		}
+		haycount++;
 	}
-	return (NULL);
+	return (0);
 }

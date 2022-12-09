@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 10:21:40 by  amangold         #+#    #+#             */
-/*   Updated: 2022/12/05 10:43:49 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/12/05 15:14:25 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_substr(char const *src, unsigned int start, size_t len)
 	if (start >= ft_strlen(src))
 		return (ft_strdup(""));
 		strlen = ft_strlen(src + start);
-		if (strlen < len)
+	if (strlen < len)
 			len = strlen;
 		dest = (char *)malloc(sizeof(char) * (len + 1));
 	i = 0;

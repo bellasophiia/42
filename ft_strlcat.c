@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 09:12:13 by  amangold         #+#    #+#             */
-/*   Updated: 2022/12/05 13:48:04 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/12/05 15:11:49 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	pd;
 	size_t	slen;
 	size_t	dstlen;
-	
 
 	slen = ft_strlen(src);
 	dstlen = ft_strlen(dst);
