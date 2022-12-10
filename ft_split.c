@@ -6,141 +6,197 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:59:56 by  amangold         #+#    #+#             */
-/*   Updated: 2022/12/05 15:11:39 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/12/10 19:29:30 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-//static int	ft_counter(char const *s, char c)
-//{
-//	unsigned int	i;
-//	unsigned int	j;
-//	size_t			len;
-//	int				counter;
-//
-//	i = 0;
-//	j = 0;
-//	len = ft_strlen(s);
-//	counter = 0;
-//	while (s[i])
-//	{
-//		while (s[i] == c)
-//			i++;
-//		if (s[i] != '\0')
-//			counter++;
-//		while (s[i] && s[i] != c)
-//			j++;
-//	}
-//	return (counter);
-//}
-//
-////char	*ft_strndup(const char *s, size_t n)
-////{
-////	char	*str;
-////	int		i;
-////
-////	str = (char *) malloc (sizeof(char) * n +1);
-////	if (str == NULL)
-////		return (NULL);
-////	i = 0;
-////	while (s)
-////	{
-////	str[n] = s;
-////	n++;
-////	s++;
-////	}
-////	str[n] = '\0';
-////	return (str);
-////}
-//static void	*free_all(char **all, int start, int stop)
-//{
-//	while (start <= stop)
-//		free(all[start++]);
-//	free(all);
-//	return (0);
-//}
-//
-//char	**ft_split(char const *s, char c)
-//{
-//	int		i;
-//	int		j;
-//	int		k;
-//	char	**str;
-//
-//	i = 0;
-//	j = 0;
-//	k = 0;
-//	if (!s)
-//		return (0);
-//	str = (char **)malloc (sizeof (ft_counter(*s, c) + 1));
-//	if (!s || !(str))
-//		return (NULL);
-//	str[k] = 0;
-//	while (i < ft_counter(s, c) && s[j] != '\0')
-//	{
-//		while (!(s[i -1] != c && (s[i] == c || !s[i])) && i > 0)
-//			i--;
-//		while (i - j > 0 && s[i - j - 1] != c)
-//			j++;
-//		str[k--] = ft_substr(s, i - j, j);
-//		if (!str)
-//			return (free_all(str, k, ft_counter(s, c)));
-//		i -= j;
-//	}
-//	return (str);
-//}
-//
-
-static int	countwords(char const *s, char c, int *i)
+static int	ft_counter(char const *s, char c)
 {
-	int	count;
+	unsigned int	i;
+	int				counter;
 
-	count = 0;
-	*i = 0;
-	while (s[*i])
+	i = 0;
+	counter = 0;
+	while (s[i])
 	{
-		if (s[*i] != c && (s[*i + 1] == c || !s[*i + 1]))
-			count++;
-		(*i)++;
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
+			counter++;
+		while (s[i] && s[i] != c)
+			i++;
 	}
-	return (count);
+	return (counter);
 }
 
-static void	*free_all(char **arr, int start, int stop)
+char	*ft_strndup(const char *s, size_t n)
 {
-	while (start <= stop)
-		free(arr[start++]);
-	free(arr);
-	return (0);
+	char	*str;
+	size_t	i;
+
+	str = (char *) malloc (sizeof(char) * ft_strlen(s) +1);
+	if (str == NULL)
+		return (NULL);
+	i = 0;
+	while (i < n)
+	{
+	str[i] = s[i];
+	i++;
+	}
+	str[n] = '\0';
+	return (str);
+}
+
+// // static void	*free_all(char **all, int start, int stop)
+// // {
+// // 	while (start <= stop)
+// // 		free(all[start++]);
+// // 	free(all);
+// // 	return (0);
+// // }
+
+// // char	**ft_split(char const *s, char c)
+// // {
+// // 	int		i;
+// // 	int		j;
+// // 	int		k;
+// // 	char	**str;
+
+// // 	i = 0;
+// // 	k = 0;
+// // 	str = ((char **) malloc(sizeof(char *) * ft_counter(s, c)) + 1);
+// // 	if (!s || !(str))
+// // 		return (NULL);
+// // 	while (s[i])
+// // 	{	
+// // 		while ((s[i] == c) && (s[i] != '\0'))
+// // 			i++;
+// // 		j = i;
+// // 		while (s[i] && s[i] != c)
+// // 		i++;
+// // 		if (i > j)
+// // 		{
+// // 	str[k] = ft_strndup(s + j, i - j);
+// // 	k++;
+// // 		}
+// // 	}
+// // 	str[k] = NULL;
+// // 	return (str);
+// // }
+
+static char	**free_all(char **str)
+{
+	size_t	j;
+
+	j = 0;
+	while (str[j])
+	{
+		free(str[j]);
+		j++;
+	}
+	free(str);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	int		i;
-	int		len;
-	int		count;
-	char	**out;
+	int		k;
+	int		j;
+	char	**str;
 
-	if (!s)
-		return (0);
-	count = countwords(s, c, &i);
-	out = (char **)malloc((count + 1) * sizeof(char *));
-	if (!out)
-		return (0);
-	out[count] = 0;
-	while (count > 0)
+	k = ft_counter(s, c);
+	str = (char **) malloc((k + 1) * sizeof(char *));
+	if (!str)
+		return (NULL);
+	i = 0;
+	str[k] = 0;
+	while (k > 0)
 	{
-		len = 0;
-		while (!(s[i - 1] != c && (s[i] == c || !s[i])) && i > 0)
+		j = 0;
+		while (!(s[i -1] != c && (s[i] == c || !s[i])) && i > 0)
 			i--;
-		while (i - len > 0 && s[i - len - 1] != c)
-			len++;
-		out[--count] = ft_substr(s, i - len, len);
-		if (!out)
-			return (free_all(out, count, countwords(s, c, &i)));
-		i -= len;
+		while (i - j > 0 && s[i - j - 1] != c)
+			j++;
+		str[--k] = ft_strndup(s, i - j);
+		if (!str)
+			return (free_all(str));
+		i -= j;
 	}
-	return (out);
+	return (str);
 }
+
+// static int	countwords(char const *s, char c, int *i)
+// {
+// 	int	count;
+
+// 	count = 0;
+// 	*i = 0;
+// 	while (s[*i])
+// 	{
+// 		if (s[*i] != c && (s[*i + 1] == c || !s[*i + 1]))
+// 			count++;
+// 		(*i)++;
+// 	}
+// 	return (count);
+// }
+
+// static void	*free_all(char **arr, int start, int stop)
+// {
+// 	while (start <= stop)
+// 		free(arr[start++]);
+// 	free(arr);
+// 	return (0);
+// }
+
+// char	**ft_split(char const *s, char c)
+// {
+// 	int		i;
+// 	int		len;
+// 	int		count;
+// 	char	**out;
+
+// 	if (!s)
+// 		return (0);
+// 	count = countwords(s, c, &i);
+// 	out = (char **)malloc((count + 1) * sizeof(char *));
+// 	if (!out)
+// 		return (0);
+// 	out[count] = 0;
+// 	while (count > 0)
+// 	{
+// 		len = 0;
+// 		while (!(s[i - 1] != c && (s[i] == c || !s[i])) && i > 0)
+// 			i--;
+// 		while (i - len > 0 && s[i - len - 1] != c)
+// 			len++;
+// 		out[--count] = ft_substr(s, i - len, len);
+// 		if (!out)
+// 			return (free_all(out, count, countwords(s, c, &i)));
+// 		i -= len;
+// 	}
+// 	return (out);
+// }
+
+// 	while (s[i])
+// {
+// 	while (str[i])
+// }
+
+// 	while (i < ft_counter(s, c) && s[k] != '\0')
+// 	{
+// 		while (!(s[k - 1] != c && (s[k] == c || !s[k])) && k > 0)
+// 			k--;
+// 	space = k;
+// 		while (s[space] && s[space] != c && s[space] != '\0')
+// 		space++;
+// 	str[i] = ft_strndup(&s[space], k - space);
+// 		if (str[k++] == 0 || !str)
+// 			return (free_all(str));
+// 	}
+// 	str[i] = NULL;
+// 	return (str);
+// }
