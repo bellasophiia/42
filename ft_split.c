@@ -6,197 +6,137 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:59:56 by  amangold         #+#    #+#             */
-/*   Updated: 2022/12/10 19:29:30 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/12/13 14:37:51 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
+#include <stdio.h>
+
 static int	ft_counter(char const *s, char c)
 {
-	unsigned int	i;
-	int				counter;
+	size_t	i;
+	int		counter;
 
 	i = 0;
 	counter = 0;
-	while (s[i])
+	while (s[i] != '\0')
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i] != '\0')
+		if (s[i] != c)
 			counter++;
-		while (s[i] && s[i] != c)
+		while (s[i] != c && s[i] != '\0')
+			i++;
+		if (s[i] == c)
 			i++;
 	}
 	return (counter);
 }
 
-char	*ft_strndup(const char *s, size_t n)
+static int	ft_word_len(char const *s, char c, int wn)
 {
-	char	*str;
-	size_t	i;
+	int	length;
+	int	i;
+	int	counter;
 
-	str = (char *) malloc (sizeof(char) * ft_strlen(s) +1);
-	if (str == NULL)
-		return (NULL);
 	i = 0;
-	while (i < n)
+	counter = 0;
+	while (s[i] != '\0' && counter < wn)
 	{
-	str[i] = s[i];
-	i++;
+		if (s[i] != c)
+			counter++;
+		while (s[i] != c && s[i] != '\0')
+			i++;
+		if (s[i] == c)
+			i++;
 	}
-	str[n] = '\0';
+	while (s[i] == c)
+		i++;
+	// printf("%c\n", s[i]);
+	length = i;
+	while (s[length] != '\0' && s[length] != c)
+	{
+		length++;
+	}
+	return (length - i);
+}
+
+static char	**ft_word_writer(char **str, char const *s, char c)
+{
+	int	i;
+	int	j;
+	int	k;
+
+	i = 0;
+	j = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] != c)
+		{
+			k = 0;
+			while (s[i] != c && s[i] != '\0')
+			{
+				str[j][k] = s[i];
+				i++;
+				k++;
+			}
+		// printf("word: %s\n", str[j]);
+			str[j][k] = '\0';
+			j++;
+		}
+		if (s[i] == c)
+			i++;
+	}
 	return (str);
 }
 
-// // static void	*free_all(char **all, int start, int stop)
-// // {
-// // 	while (start <= stop)
-// // 		free(all[start++]);
-// // 	free(all);
-// // 	return (0);
-// // }
-
-// // char	**ft_split(char const *s, char c)
-// // {
-// // 	int		i;
-// // 	int		j;
-// // 	int		k;
-// // 	char	**str;
-
-// // 	i = 0;
-// // 	k = 0;
-// // 	str = ((char **) malloc(sizeof(char *) * ft_counter(s, c)) + 1);
-// // 	if (!s || !(str))
-// // 		return (NULL);
-// // 	while (s[i])
-// // 	{	
-// // 		while ((s[i] == c) && (s[i] != '\0'))
-// // 			i++;
-// // 		j = i;
-// // 		while (s[i] && s[i] != c)
-// // 		i++;
-// // 		if (i > j)
-// // 		{
-// // 	str[k] = ft_strndup(s + j, i - j);
-// // 	k++;
-// // 		}
-// // 	}
-// // 	str[k] = NULL;
-// // 	return (str);
-// // }
-
-static char	**free_all(char **str)
+static void	free_all(char **str, int i)
 {
-	size_t	j;
-
-	j = 0;
-	while (str[j])
+	while (i >= 0)
 	{
-		free(str[j]);
-		j++;
+		free(str[i]);
+		i--;
 	}
 	free(str);
-	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		k;
-	int		j;
 	char	**str;
+	int		w_len;
+	int		i;
 
-	k = ft_counter(s, c);
-	str = (char **) malloc((k + 1) * sizeof(char *));
+	if (!s)
+		return (NULL);
+	str = (char **) malloc(sizeof(char *) * (ft_counter(s, c) + 1));
 	if (!str)
 		return (NULL);
-	i = 0;
-	str[k] = 0;
-	while (k > 0)
+	i = -1;
+	while (++i < ft_counter(s, c))
 	{
-		j = 0;
-		while (!(s[i -1] != c && (s[i] == c || !s[i])) && i > 0)
-			i--;
-		while (i - j > 0 && s[i - j - 1] != c)
-			j++;
-		str[--k] = ft_strndup(s, i - j);
-		if (!str)
-			return (free_all(str));
-		i -= j;
+		w_len = ft_word_len(s, c, i);
+		// printf("allocating memory for length: %d\n", w_len);
+		str[i] = (char *)malloc((w_len + 1) * sizeof(char));
+		if (!str[i])
+		{
+			free_all(str, i);
+			return (NULL);
+		}
 	}
+	str = ft_word_writer(str, s, c);
+	// str[ft_counter(s,c) + 1] = 0;
 	return (str);
 }
 
-// static int	countwords(char const *s, char c, int *i)
-// {
-// 	int	count;
 
-// 	count = 0;
-// 	*i = 0;
-// 	while (s[*i])
+// int main(void){
+// 	char *s = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse";
+// 	char **ret = ft_split(s, ' ');
+// 	int i = 0;
+// 	while (ret[i] != NULL)
 // 	{
-// 		if (s[*i] != c && (s[*i + 1] == c || !s[*i + 1]))
-// 			count++;
-// 		(*i)++;
+// 		printf("Word number %d: %s \n",i , ret[i]);
+// 		i++;
 // 	}
-// 	return (count);
-// }
-
-// static void	*free_all(char **arr, int start, int stop)
-// {
-// 	while (start <= stop)
-// 		free(arr[start++]);
-// 	free(arr);
-// 	return (0);
-// }
-
-// char	**ft_split(char const *s, char c)
-// {
-// 	int		i;
-// 	int		len;
-// 	int		count;
-// 	char	**out;
-
-// 	if (!s)
-// 		return (0);
-// 	count = countwords(s, c, &i);
-// 	out = (char **)malloc((count + 1) * sizeof(char *));
-// 	if (!out)
-// 		return (0);
-// 	out[count] = 0;
-// 	while (count > 0)
-// 	{
-// 		len = 0;
-// 		while (!(s[i - 1] != c && (s[i] == c || !s[i])) && i > 0)
-// 			i--;
-// 		while (i - len > 0 && s[i - len - 1] != c)
-// 			len++;
-// 		out[--count] = ft_substr(s, i - len, len);
-// 		if (!out)
-// 			return (free_all(out, count, countwords(s, c, &i)));
-// 		i -= len;
-// 	}
-// 	return (out);
-// }
-
-// 	while (s[i])
-// {
-// 	while (str[i])
-// }
-
-// 	while (i < ft_counter(s, c) && s[k] != '\0')
-// 	{
-// 		while (!(s[k - 1] != c && (s[k] == c || !s[k])) && k > 0)
-// 			k--;
-// 	space = k;
-// 		while (s[space] && s[space] != c && s[space] != '\0')
-// 		space++;
-// 	str[i] = ft_strndup(&s[space], k - space);
-// 		if (str[k++] == 0 || !str)
-// 			return (free_all(str));
-// 	}
-// 	str[i] = NULL;
-// 	return (str);
 // }
