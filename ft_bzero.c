@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 13:53:32 by  amangold         #+#    #+#             */
-/*   Updated: 2022/11/29 17:33:11 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/12/16 11:13:10 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,3 @@ void	ft_bzero(void *s, size_t n)
 	}
 	s = str;
 }
-
-// int main()
-// {
-//     char buffer[10];
-//     bzero( buffer, 10);
-//     return 0;
-// }

@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 19:12:39 by  amangold         #+#    #+#             */
-/*   Updated: 2022/12/02 17:30:46 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/12/16 11:48:19 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
-// int main(void)
-// {
-//     char data[] = {'h', '', }
-// }

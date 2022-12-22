@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 18:05:23 by  amangold         #+#    #+#             */
-/*   Updated: 2022/12/01 13:25:01 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/12/16 13:37:09 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,3 @@ char	*ft_strchr(const char *hay, int needle)
 		return (str + first);
 	return (NULL);
 }
-
-// int	main()
-// {
-// 	const char str[] = "GutenTag";
-// 	const char = 't';
-// 	char	*ret;
-
-// 	ret = strchr(str, ch);
-
-// 	printf("String after" , ch, ret);
-
-// 	return(0); 
-// }

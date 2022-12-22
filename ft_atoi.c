@@ -6,7 +6,7 @@
 /*   By:  amangold < amangold@student.42heilbron    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:14:53 by  amangold         #+#    #+#             */
-/*   Updated: 2022/12/05 15:11:17 by  amangold        ###   ########.fr       */
+/*   Updated: 2022/12/16 11:04:06 by  amangold        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,3 @@ int	ft_atoi(const char *str)
 	}
 	return ((int)(nbr * sign));
 }
-
-//Driver Code
-// int main()
-// {
-//     char str[] = "  -123";
-//     // Functional Code
-//     int val = atoi(str);
-//     printf("%d ", val);
-//     return 0;
-// }
-// 
